@@ -9,18 +9,13 @@
 import SwiftUI
 
 struct ContentView: View {
-    let food = ["麻辣烫", "煎饼果子", "豆腐脑", "炸酱面", "卤肉饭",
-                 "生煎包", "臭豆腐", "小笼包", "扬州炒饭", "北京炸酱面",
-                 "麻辣香锅", "锅盔", "肉夹馍", "烤冷面", "油条",
-                 "糖火烧", "老北京炸酱面", "螺蛳粉","臭干子","黄焖鸡米饭",
-                 "油泼面", "灌汤包", "羊肉泡馍", "大包子", "牛肉拉面",
-                 "甜麻花", "米线", "酸辣粉", "肉饼", "花卷"]
-    @State private var pickedFood: String?
+    let food = Food.all
+    @State private var pickedFood: Food?
     
     var body: some View {
         VStack(spacing: 30) {
-            Text("今天吃什么？")
-                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+            Text("选一个东西尝试一下吧！")
+                .font(.title)
                 .bold()
             
             Image("icon")
@@ -28,10 +23,17 @@ struct ContentView: View {
                 .aspectRatio(contentMode: .fit)
             
             if pickedFood != .none {
-                Text(pickedFood ?? "")
+                Text(pickedFood!.name)
                     .font(.largeTitle)
                     .bold()
                     .foregroundColor(.green)
+                    .id(pickedFood!.name)
+                    .transition(.asymmetric(
+                        insertion: .opacity
+                            .animation(.easeInOut(duration: 0.5).delay(0.2)),
+                        removal: .opacity
+                            .animation(.easeInOut(duration: 0.4))))
+//                    .transition(.scale.combined(with: .slide))
             }
             
             Button {
@@ -39,7 +41,10 @@ struct ContentView: View {
                     $0 != pickedFood
                 }.first
             } label: {
-                Text("选一个").frame(width: 150)
+                Text(pickedFood == .none ? "选一个" : "换一个")
+                    .frame(width: 150)
+                    .animation(.none, value: pickedFood)
+                    .transformEffect(/*@START_MENU_TOKEN@*/.identity/*@END_MENU_TOKEN@*/)
             }
             .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
             .buttonStyle(.borderedProminent)
@@ -56,11 +61,11 @@ struct ContentView: View {
             
             
         }
-        .frame(maxHeight: .infinity)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding()
         .background(Color(.secondarySystemBackground))
         .buttonBorderShape(.capsule)
-        .animation(.easeInOut, value: pickedFood)
+        .animation(.easeInOut(duration: 0.6), value: pickedFood)
         
     }
 }

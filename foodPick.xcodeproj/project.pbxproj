@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD1BE8972BAF29B30088866D /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1BE8962BAF29B30088866D /* Food.swift */; };
 		ADFC16FB2BAED0820095D14F /* foodPickApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFC16FA2BAED0820095D14F /* foodPickApp.swift */; };
 		ADFC16FD2BAED0820095D14F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFC16FC2BAED0820095D14F /* ContentView.swift */; };
 		ADFC16FF2BAED0830095D14F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADFC16FE2BAED0830095D14F /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AD1BE8962BAF29B30088866D /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		ADFC16F72BAED0820095D14F /* foodPick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = foodPick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADFC16FA2BAED0820095D14F /* foodPickApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = foodPickApp.swift; sourceTree = "<group>"; };
 		ADFC16FC2BAED0820095D14F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -55,6 +57,7 @@
 				ADFC16FC2BAED0820095D14F /* ContentView.swift */,
 				ADFC16FE2BAED0830095D14F /* Assets.xcassets */,
 				ADFC17002BAED0830095D14F /* Preview Content */,
+				AD1BE8962BAF29B30088866D /* Food.swift */,
 			);
 			path = foodPick;
 			sourceTree = "<group>";
@@ -139,6 +142,7 @@
 			files = (
 				ADFC16FD2BAED0820095D14F /* ContentView.swift in Sources */,
 				ADFC16FB2BAED0820095D14F /* foodPickApp.swift in Sources */,
+				AD1BE8972BAF29B30088866D /* Food.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
